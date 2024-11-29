@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animated Poster</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Arial', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: #111;
+      overflow: hidden;
+      color: #fff;
+    }
+
+    /* Poster container */
+    .poster {
+      position: relative;
+      width: 75vw;
+      height: 80vh;
+      background: url('https://i.postimg.cc/CxJYc952/BYCF.jpg') no-repeat center center/cover;
+      border-radius: 20px;
+      display: flex;
+      flex-direction: column; /* Stack items vertically */
+      justify-content: flex-start; /* Align items at the top */
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+      overflow: hidden;
+      animation: posterAnimation 2.5s ease-in-out;
+    }
+
+    /* Text animation */
+    .poster-text {
+      position: relative;
+      font-size: 3rem;
+      font-weight: bold;
+      line-height: 1.4;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      animation: textFadeIn 2s ease-in-out;
+      padding-top: 30px; /* Add space at the top for the heading */
+    }
+
+    /* Fade-in animation */
+    @keyframes textFadeIn {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* Gradient background animation for poster */
+    @keyframes posterAnimation {
+      0% {
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      }
+      50% {
+        background: linear-gradient(45deg, #6a11cb, #2575fc);
+      }
+      100% {
+        background: linear-gradient(45deg, #ff7e5f, #feb47b);
+      }
+    }
+
+    /* Subheading style */
+    .subheading {
+      font-size: 1.5rem;
+      font-weight: 300;
+      margin-top: 10px;
+      color: #f7f7f7;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    }
+
+    /* Button Style */
+    .cta-button {
+      margin-top: 30px;
+      padding: 15px 40px;
+      background: #ff6a00;
+      color: white;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+      animation: blink 1.5s infinite;
+    }
+
+    .cta-button:hover {
+      background: #ff8a00;
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Blink animation */
+    @keyframes blink {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+
+    /* Button focus effect */
+    .cta-button:focus {
+      outline: none;
+    }
+
+    /* Responsive Design for small screens */
+    @media (max-width: 768px) {
+      .poster {
+        width: 90vw;
+        height: 60vh;
+      }
+
+      .poster-text {
+        font-size: 2rem;
+      }
+
+      .subheading {
+        font-size: 1.2rem;
+      }
+
+      .cta-button {
+        padding: 12px 30px;
+        font-size: 1.1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="poster">
+    <div class="poster-text">
+      <h3>BYCF Winter Fest-24 </h3> <!-- Heading at the top -->
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSfvlz1TZD0NRhMin5xQRS8fQuWjgOHD5ZlVTYU0x2tRVL8sYw/viewform?usp=sf_link" target="_blank">
+        <button class="cta-button">Register Now...!!</button>
+      </a>
+    </div>
+  </div>
+
+</body>
+</html>
